@@ -1,11 +1,11 @@
 import { Request, Response } from "express";
-import { AuthenticateUserService } from "../services/AuthenticateUserService";
+import { AuthenticateUserWithGithubService } from "../services/AuthenticateUserWithGithubService";
 
-class AuthenticateUserController {
+class AuthenticateUserWithGithubController {
   async handle(request: Request, response: Response) {
     const { code } = request.body;
 
-    const service = new AuthenticateUserService();
+    const service = new AuthenticateUserWithGithubService();
 
     try {
       const result = await service.execute(code);
@@ -16,4 +16,4 @@ class AuthenticateUserController {
   }
 }
 
-export { AuthenticateUserController };
+export { AuthenticateUserWithGithubController };
