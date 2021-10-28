@@ -5,11 +5,14 @@ import { GetLast3MessagesController } from "./controllers/GetLast3MessagesContro
 import { ProfileUserController } from "./controllers/ProfileUserController";
 import { CreateUserController } from "./controllers/CreateUserController";
 import { ensureAuthenticated } from "./middleware/EnsureAuthenticated";
+import { AuthenticateUserWithAccountController } from "./controllers/AuthenticateUserWithAccountController";
 
 const router = Router();
 
 //express pass automatically the params request and response to the handle
-router.post("/authenticate", new AuthenticateUserWithGithubController().handle);
+router.post("/authenticate/with/github", new AuthenticateUserWithGithubController().handle);
+
+router.post("/authenticate/with/account", new AuthenticateUserWithAccountController().handle);
 
 router.post(
   "/message",

@@ -1,8 +1,8 @@
 import prismaClient from "../prisma";
-import { User } from "../models/User";
+import { CreateUserModel } from "../models/User";
 
 class CreateUserService {
-  async execute(userRequest: User) {
+  async execute(userRequest: CreateUserModel) {
     const user = prismaClient.user.create({
       data: userRequest
     });

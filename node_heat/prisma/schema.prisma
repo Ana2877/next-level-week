@@ -13,7 +13,7 @@ model User {
   password    String?
   github_id   Int?
   avatar_url  String?
-  login       String
+  login       String @unique
 
   @@map("users")
   messages Message []

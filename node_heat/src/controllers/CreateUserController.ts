@@ -1,10 +1,10 @@
 import { Request, Response } from "express";
 import { CreateUserService } from "../services/CreateUserService";
-import { User } from "../models/User";
+import { CreateUserModel } from "../models/User";
 
 const getUserFrom = (request: Request) => {
     const { name, password, login } = request.body;
-    const user: User = {name, password, login}
+    const user: CreateUserModel = {name, password, login}
     return user
 }
 
